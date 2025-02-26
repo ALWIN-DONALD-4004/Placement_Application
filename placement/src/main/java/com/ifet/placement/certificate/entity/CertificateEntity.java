@@ -1,7 +1,4 @@
-package com.ifet.placement.certificate;
-
-
-import java.time.LocalDate;
+package com.ifet.placement.certificate.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,6 +12,7 @@ public class CertificateEntity {
 	private Long roll_number;
 	
 	@Column(name = "Student Name")
+	
 	private String name;
 	
 	@Column(name = "Course Name")
@@ -24,14 +22,14 @@ public class CertificateEntity {
 	private String Verificationid;
 	
 	@Column(name = "Issued Date")
-	private LocalDate issueDate;
+	private String issueDate;
 	
 	@Column(name = "Course Duration")
 	private String course_duration;
 	
 	
 	public CertificateEntity(Long register_number, String name, String coursename, String verificationid,
-			LocalDate issueDate, String course_duration) {
+			String issueDate, String course_duration) {
 		super();
 		this.roll_number = register_number;
 		this.name = name;
@@ -80,10 +78,10 @@ public class CertificateEntity {
 	}
 	
 	
-	public LocalDate getIssueDate() {
+	public String getIssueDate() {
 		return issueDate;
 	}
-	public void setIssueDate(LocalDate issueDate) {
+	public void setIssueDate(String issueDate) {
 		this.issueDate = issueDate;
 	}
 	
