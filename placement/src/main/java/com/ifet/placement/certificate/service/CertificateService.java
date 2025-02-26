@@ -14,7 +14,7 @@ public class CertificateService {
 	@Autowired
 	private CertificateRepository repo;
 	
-	//get att the data
+	//get at the data
 	public List<CertificateEntity> listAll() {
 		return repo.findAll();
 	}
