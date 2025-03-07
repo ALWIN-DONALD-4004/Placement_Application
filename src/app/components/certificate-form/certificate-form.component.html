@@ -1,0 +1,34 @@
+<form (ngSubmit)="saveCertificate()">
+
+  <div class="form-group">
+    <label for="register_number">Roll Number:</label>
+    <input type="number" id="register_number" class="form-control" [(ngModel)]="certificate.register_number" name="register_number" required>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" class="form-control" [(ngModel)]="certificate.name" name="name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="coursename">Course Name:</label>
+    <input type="text" id="coursename" class="form-control" [(ngModel)]="certificate.coursename" name="coursename" required>
+  </div>
+
+  <div class="form-group">
+    <label for="verificationid">Verification ID:</label>
+    <input type="text" id="verificationid" class="form-control" [(ngModel)]="certificate.verificationid" name="verificationid" required>
+  </div>
+
+  <div class="form-group">
+    <label for="issueDate">Issue Date:</label>
+    <input type="date" id="issueDate" class="form-control" [(ngModel)]="certificate.issueDate" name="issueDate" required>
+  </div>
+
+  <div class="form-group">
+    <label for="course_duration">Course Duration:</label>
+    <input type="text" id="course_duration" class="form-control" [(ngModel)]="certificate.course_duration" name="course_duration" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Save Certificate</button>
+</form>

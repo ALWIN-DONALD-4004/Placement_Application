@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Certificate List</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Roll Number</th>
+        <th>Name</th>
+        <th>Course</th>
+        <th>Verification ID</th>
+        <th>Issue Date</th>
+        <th>Duration</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cert of certificates">
+        <td>{{ cert.register_number }}</td>
+        <td>{{ cert.name }}</td>
+        <td>{{ cert.coursename }}</td>
+        <td>{{ cert.verificationid }}</td>
+        <td>{{ cert.issueDate }}</td>
+        <td>{{ cert.course_duration }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm" routerLink="/edit/{{cert.register_number}}">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteCertificate(cert.register_number)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary" routerLink="/add">Add Certificate</button>
+</div>
