@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import com.ifet.placement.certificate.service.CertificateService;
 
 import jakarta.persistence.NoResultException;
 
+@CrossOrigin(origins ="http://localhost:4200")
 @RestController
 @RequestMapping("/certificate")
 public class CertificateController {
@@ -32,10 +34,13 @@ public class CertificateController {
 	}
 	
 	//to give new data to the database
-	@PostMapping("/certificateservice")
-	public void add(@RequestBody CertificateEntity certify1) {
-		certify.save(certify1);
+	@PostMapping("/certificateservice/post")
+	public ResponseEntity<String> add(@RequestBody CertificateEntity certify1) {
+	    certify.save(certify1); 
+	    
+	    return ResponseEntity.ok("{\"message\": \"Successful\"}"); 
 	}
+	
 	
 	// to get a separate data from a database with respect to ID
 	@GetMapping("/certificateservice/{id}")

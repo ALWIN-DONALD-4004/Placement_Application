@@ -20,8 +20,9 @@ public class CertificateService {
 	}
 	
 	//save the record
-	public void save(CertificateEntity cust) {
+	public String save(CertificateEntity cust) {
 		repo.save(cust);
+		return "message entered Successfully";
 	}
 		
 	//retriving the particular record with id

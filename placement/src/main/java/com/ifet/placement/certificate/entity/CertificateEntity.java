@@ -34,7 +34,7 @@ public class CertificateEntity {
 		this.roll_number = register_number;
 		this.name = name;
 		this.coursename = coursename;
-		Verificationid = verificationid;
+		this.Verificationid = verificationid;
 		this.issueDate = issueDate;
 		this.course_duration = course_duration;
 	}
@@ -74,7 +74,7 @@ public class CertificateEntity {
 		return Verificationid;
 	}
 	public void setVerificationid(String verificationid) {
-		Verificationid = verificationid;
+		this.Verificationid = verificationid;
 	}
 	
 	
